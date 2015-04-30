@@ -1,0 +1,49 @@
+<head>
+  <title>blog</title>
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo">blog</a>
+
+    <div class="right">
+      {{> loginButtons}}
+    </div>
+  </header>
+
+  <div id="container">
+    {{> posts}}
+
+    {{#if currentUser}}
+      {{> createPost}}
+    {{/if}}
+  </div>
+</body>
+
+<template name="posts">
+  {{#each posts}}
+    <div class="post">
+      {{> post}}
+    </div>
+  {{/each}}
+</template>
+
+<template name="post">
+  <small>{{author.username}} {{#if draft}}(Draft){{/if}} - {{createdAt}}</small>
+  <p>
+    <a href="#" class="postTitle">{{title}}</a>
+    {{#if owner}}
+      <a href="#" class="edit">Edit</a>
+    {{/if}}
+  </p>
+</template>
+
+<template name="createPost">
+  <h2>Create Post</h2>
+  <form>
+      <input type="text" name="title" class="postTitle" placeholder="Type your title here..." />
+      <textarea name="post" class="postText" rows="10" cols="20" placeholder="Your story goes here..."></textarea>
+      <input type="button" class="sendPost" value="Create Post" />
+      <input type="button" class="savePost" value="Save Draft" />
+  </form>
+</template>
