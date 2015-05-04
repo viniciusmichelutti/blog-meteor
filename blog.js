@@ -6,6 +6,10 @@ if (Meteor.isClient) {
     passwordSignupFields: "USERNAME_ONLY"
   });
 
+  Template.registerHelper('formatDate', function(date) {
+    return moment(date).format('MMMM DD, YYYY');
+  });
+
   Template.posts.helpers({
     posts: function() {
       return Posts.find({}, {sort: {createdAt: -1}});
@@ -18,6 +22,12 @@ if (Meteor.isClient) {
     },
     owner: function() {
       return this.createdBy === Meteor.userId();
+    },
+    resumePost: function() {
+      if (this.post.length > 500) {
+        return this.post.substring(0, 500) + '...';
+      }
+      return this.post;
     }
   });
 

@@ -1,14 +1,22 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
-@import url(http://fonts.googleapis.com/css?family=Pontano+Sans);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Noto+Serif:400,700);
 
-body { font-family: 'Open Sans', Tahoma, sans-serif; margin: 0; }
-header { position:fixed; top:0; left:0; right:0; padding:10px; border-bottom:2px solid #ccc; }
+body { font-family: 'Noto Serif', Tahoma, sans-serif; color:#666; background-color:#F5F5F5; font-size:16px; line-height:24px; }
+h1, h2, h3, h4, h5 { font-family: 'Oswald', sans-serif; }
+h1 { font-size:32px; color:#000; line-height:38px; }
+h1 a { color:#000 !important; }
+header { position:fixed; top:0; left:0; right:0; padding:10px 50px; border-bottom:1px solid #ccc; background:#fff; }
+footer { background-color:#2d2d2d; padding:50px; }
 form input { display: block; }
-a, a:visited { text-decoration:none; }
+a, a:visited { text-decoration:none; color:#FF6A6A; }
+a:hover { background-color:#FFF0E3; }
 small { font-size:11px; }
 
 .logo { color:#000; text-transform:uppercase; font-weight:bold; font-family:Verdana, sans-serif; }
 .right { float:right; }
-.post { margin:20px 0; }
-a.postTitle { font-size:18px; color:#000; font-weight:bold; }
-#container { margin:60px 50px 0; }
+.post { margin:20px 0; padding:30px; background-color:#FFF; }
+.postDetails { text-transform:uppercase; font-size:11px; color:#999; margin:10px 0 20px; }
+.postContent { text-align:justify; }
+.postMore { margin-top:50px; border-top:1px dotted #CCC; padding-top:30px; }
+
+#container { margin:60px 50px 0; min-height:1200px; }

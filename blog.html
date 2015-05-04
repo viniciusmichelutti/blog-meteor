@@ -18,6 +18,10 @@
       {{> createPost}}
     {{/if}}
   </div>
+
+  <footer>
+    logo / home / write your story / login
+  </footer>
 </body>
 
 <template name="posts">
@@ -29,13 +33,24 @@
 </template>
 
 <template name="post">
-  <small>{{author.username}} {{#if draft}}(Draft){{/if}} - {{createdAt}}</small>
-  <p>
-    <a href="#" class="postTitle">{{title}}</a>
+  <h1>
+    <a href="#">{{title}}</a>
+  </h1>
+  <p class="postDetails">
+    {{formatDate createdAt}} / {{author.username}} {{#if draft}}(Draft){{/if}}
     {{#if owner}}
       <a href="#" class="edit">Edit</a>
     {{/if}}
   </p>
+  <p class="postContent">
+    {{resumePost}}
+  </p>
+  <div class="postMore">
+    <span class="tags">
+      <a href="#">tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a>
+    </span>
+    <a href="#" class="right">Continue reading...</a>
+  </div>
 </template>
 
 <template name="createPost">
